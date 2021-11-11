@@ -27,8 +27,9 @@ const Banner = () => {
 
                     </Col>
                     <Col xs={12} md={4} className="px-5">
+                        <h3 className="text-center my-2 fw-bold myText">Search your Dream Car</h3>
                         <Card>
-                            <Card.Header>
+                            <Card.Header >
                                 <Nav variant="tabs" defaultActiveKey="#all" className="justify-content-center">
                                     <Nav.Item>
                                         <Nav.Link href="#all">All</Nav.Link>
@@ -75,9 +76,6 @@ const Banner = () => {
                                 </div>
                             </Card.Body>
                         </Card>
-                        <p className="text-center my-2 fw-bold myText">
-                            Search your Dream Car
-                        </p>
                     </Col>
                     <Row>
                         <Col className="d-flex justify-content-center" xs={12} style={{ marginBottom: "0%" }} >

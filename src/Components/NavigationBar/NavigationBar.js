@@ -27,9 +27,20 @@ const NavigationBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <NavLink className="nav-link" to="/myorders">My Orders</NavLink>
-                            <NavLink className="nav-link" to="/explore-all">Explore All</NavLink>
-                            <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
+                            <NavLink
+                                activeStyle={{
+                                    fontWeight: "bold",
+                                    borderLeft: "3px solid #29b6f6",
+                                    borderRight: "3px solid #29b6f6",
+                                    borderRadius: "50px",
+                                    transition: "borderLeft 2s ease, bordeRight 2s ease",
+                                    fontWeight: "bold",
+                                    paddingLeft: "5px",
+                                    paddingRight: "5px",
+
+                                }}
+                                className="nav-link" to="/explore-all">Explore All</NavLink>
+                            <NavLink className="nav-link" to="/dashboard">My Dashboard</NavLink>
 
                         </Nav>
 
