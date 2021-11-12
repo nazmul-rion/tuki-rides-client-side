@@ -4,10 +4,10 @@ import ProductCarousel from './ProductCarousel'
 
 const PopularCarSection = () => {
     return (
-        <Container fluid>
-            <div className="d-flex flex-column flex-md-row justify-content-between my-5 ">
+        <Container >
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center my-5 ">
                 <div>
-                    <h1 className="fw-bold">Popular Cars</h1>
+                    <h1 className="">Popular Cars</h1>
                 </div>
                 <div className="d-flex justify-content-between border border-3 px-5">
                     <button className="btn btn-outline-info m-3">NEW</button>

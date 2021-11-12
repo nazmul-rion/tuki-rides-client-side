@@ -8,6 +8,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import ExploreAllProducts from './Pages/ExploreAllProducts/ExploreAllProducts';
+import ProductDetailsPage from './Pages/ProductDetailsPage/ProductDetailsPage';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/productDetails">
+              <ProductDetailsPage></ProductDetailsPage>
             </PrivateRoute>
           </Switch>
         </AuthProvider>
