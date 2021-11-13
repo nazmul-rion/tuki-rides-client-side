@@ -4,7 +4,7 @@ const Message = () => {
   return (
     <div>
       <section class="container pb-5">
-        <h1 class=" py-5 fw-bolder text-center mt-5">Bike <span class="client-color">Reviews</span></h1>
+        <h1 class=" py-5 fw-bolder text-center mt-5">Car <span class="client-color">Reviews</span></h1>
         <div class="row row-cols-1 row-cols-lg-2 g-4">
           <div class="col">
             <div class="card h-100">
