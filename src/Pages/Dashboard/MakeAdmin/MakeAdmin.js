@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     const handleOnSubmit = e => {
         const user = { email };
 
-        fetch('https://tuki-rides-nazmul-rion.herokuapp.com/allusers/makeadmin', {
+        fetch('https://tuki-rides-nazmul-rion.herokuapp.com/adduser/makeadmin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

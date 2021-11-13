@@ -47,7 +47,7 @@ const Review = () => {
 
                                 <label>Add Rating</label>
                                 <input step="0.01" className="form-control" type="number"  {...register("rating", { required: true })} />
-                                <input value="Add Review" className="btn text-dark fw-bold custom-button mt-3" type="submit" />
+                                <input value="Add Review" className="btn text-dark fw-bold custom-button my-3" type="submit" />
                             </form>
                         )
                             : (
