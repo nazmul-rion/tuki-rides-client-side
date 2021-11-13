@@ -28,7 +28,7 @@ function ReviewCard(props) {
                     </div>
                 </div></Card.Header>
             <Card.Body>
-                <Card.Title>Special title treatment</Card.Title>
+
                 <Card.Text className=" overflow-hidden" style={{ height: "100px", whiteSpace: "", textOverflow: "ellipsis" }}>
                     {text}
                 </Card.Text>

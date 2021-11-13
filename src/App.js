@@ -42,7 +42,8 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
-            <PrivateRoute path="/productDetails">
+            <PrivateRoute path="/productDetails/:id">
+              <NavigationBar />
               <ProductDetailsPage></ProductDetailsPage>
             </PrivateRoute>
           </Switch>

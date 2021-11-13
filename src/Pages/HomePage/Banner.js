@@ -1,9 +1,11 @@
 import React from 'react'
 import { Col, Container, Row, Button, Card, Nav } from 'react-bootstrap'
+import { useHistory } from 'react-router'
 import bannerPhoto from '../../images/banner.jpg'
 import bannerCar from '../../images/bannerCar.png'
 
 const Banner = () => {
+    const history = useHistory();
     return (
         <div>
             <Container fluid >
@@ -21,7 +23,7 @@ const Banner = () => {
 
                         <Row>
                             <Col>
-                                <Button className="custom-button fs-3">Explore All <i className="fas fa-car "></i></Button>
+                                <Button onClick={() => history.push('/explore-all')} className="custom-button fs-3">Explore All <i className="fas fa-car "></i></Button>
                             </Col>
                         </Row>
 

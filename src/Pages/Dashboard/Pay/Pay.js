@@ -2,8 +2,9 @@ import React from 'react';
 
 const Pay = () => {
     return (
-        <div>
-            <h2>Payment system comming soon...</h2>
+        <div className="d-flex justify-content-center align-items-center" style={{ height: "100%" }}>
+
+            <img className="img-fluid" src="https://i.ibb.co/jbC9YfN/coming-soon.jpg" alt="" />
         </div>
     );
 };
