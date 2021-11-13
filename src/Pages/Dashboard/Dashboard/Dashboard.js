@@ -36,7 +36,7 @@ const Dashboard = () => {
                 </li>
                 <li className="nav-item">
                   <NavLink style={{ color: 'white' }} to={`${url}`} className="nav-link align-middle ">
-                    <i class="fas fa-tachometer-alt"></i>
+                    <i className="fas fa-tachometer-alt"></i>
 
                     <span className="ms-1 d-none d-sm-inline">Dashboard</span>
                   </NavLink>

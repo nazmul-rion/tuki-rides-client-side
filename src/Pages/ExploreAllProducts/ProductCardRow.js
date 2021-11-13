@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 function ProductCardRow(props) {
     const { _id, Name, Price, Color, Description, Transmission, Year, Make, Doors, Condition, img, FuelType, rating, raters } = props.cars;
     return (
-        <div class="card hover mb-3" >
-            <div class="row g-0 p-2 align-items-center">
-                <div class="col-md-4">
-                    <img src={img} class="img-fluid rounded-start" alt="..." />
+        <div className="card hover mb-3" >
+            <div className="row g-0 p-2 align-items-center">
+                <div className="col-md-4">
+                    <img src={img} className="img-fluid rounded-start" alt="..." />
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 className="card-title  overflow-hidden" style={{ whiteSpace: "nowrap", textOverflow: "ellipsis" }}><i class="fas fa-car"></i> {Name}</h5>
-                        <h5 className="fw-bold  overflow-hidden" style={{ color: "#330063", whiteSpace: "nowrap", textOverflow: "ellipsis" }}><i class="fas fa-copyright"></i> {Make}</h5>
+                <div className="col-md-8">
+                    <div className="card-body">
+                        <h5 className="card-title  overflow-hidden" style={{ whiteSpace: "nowrap", textOverflow: "ellipsis" }}><i className="fas fa-car"></i> {Name}</h5>
+                        <h5 className="fw-bold  overflow-hidden" style={{ color: "#330063", whiteSpace: "nowrap", textOverflow: "ellipsis" }}><i className="fas fa-copyright"></i> {Make}</h5>
                         <div className="card-text" >
 
                             <div className="d-flex justify-content-between align-items-center">
@@ -47,7 +47,7 @@ function ProductCardRow(props) {
                             <p className="border  border-2 py-2 px-3" style={{ borderRadius: "10px", backgroundColor: "#baffdf" }}>{Year}</p>
                         </div>
                         <div className="d-flex justify-content-center justify-content-md-end mt-3">
-                            <Link className="custom-button btn" to={`/productDetails/${_id}`}>Procced to Buy <i class="fas fa-arrow-right"></i></Link>
+                            <Link className="custom-button btn" to={`/productDetails/${_id}`}>Procced to Buy <i className="fas fa-arrow-right"></i></Link>
                         </div>
                     </div>
                 </div>

@@ -12,10 +12,10 @@ const ProductCard = (props) => {
     return (
         <div className="mx-2">
             <div className="card " style={{ minHeight: "520px" }}>
-                <img className="card-img-top" height="250px" src={img ? img : logo} alt="Card image cap" />
+                <img className="card-img-top" height="250px" src={img ? img : logo} alt="Card_image" />
                 <div className="card-body">
                     <div >
-                        <h5 className="card-title  overflow-hidden" style={{ whiteSpace: "nowrap", textOverflow: "ellipsis" }}><i class="fas fa-car"></i> {Name}</h5>
+                        <h5 className="card-title  overflow-hidden" style={{ whiteSpace: "nowrap", textOverflow: "ellipsis" }}><i className="fas fa-car"></i> {Name}</h5>
                     </div>
                     <div className="card-text" >
 
@@ -47,7 +47,7 @@ const ProductCard = (props) => {
 
                 </div>
                 <div className="d-flex justify-content-center mb-3">
-                    <Link to={`/productDetails/${_id}`} className="custom-button btn">Procced to Buy <i class="fas fa-arrow-right"></i></Link>
+                    <Link to={`/productDetails/${_id}`} className="custom-button btn">Procced to Buy <i className="fas fa-arrow-right"></i></Link>
                 </div>
             </div>
         </div >

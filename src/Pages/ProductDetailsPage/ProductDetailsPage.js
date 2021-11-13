@@ -22,7 +22,7 @@ const ProductDetailsPage = () => {
         setSingleCar(found)
     }, [cars, id]);
     const { user } = useAuth();
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         swal("Are you sure you want buy this Car?", {
             buttons: ["No", "Yes"],
@@ -71,7 +71,7 @@ const ProductDetailsPage = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 col-md-7">
-                        <img className="img-fluid" src={singleCar?.img} alt="car photo" style={{ borderRadius: "30px" }} />
+                        <img className="img-fluid" src={singleCar?.img} alt="car_photo" style={{ borderRadius: "30px" }} />
                         <div className="row">
                             <h1 className="mt-5">{singleCar?.Name}</h1>
                             <div className="d-flex align-items-center">
@@ -100,7 +100,14 @@ const ProductDetailsPage = () => {
                                             <input hidden value={singleCar?.Price || ' '} {...register("Price", { required: true })} />
                                             <input hidden value="Pending" {...register("Status", { required: true })} />
                                             <input hidden value={user.uid || ' '}  {...register("UserId", { required: true })} />
-                                            <input hidden value={user.photoURL || ' '}  {...register("userPhoto", { required: true })} />
+                                            {
+                                                user.photoURL ? (
+                                                    <input hidden value={user.photoURL || ' '}  {...register("userPhoto", { required: true })} />)
+                                                    : <>
+                                                    </>
+
+                                            }
+
                                             <input hidden value={user.displayName || ' '}  {...register("userName", { required: true })} />
                                             <input value="Buy Now" className="btn text-dark fw-bold custom-button mt-3" type="submit" />
                                         </form>
@@ -132,7 +139,7 @@ const ProductDetailsPage = () => {
                             <p className="border-2 border-bottom border-dark">{singleCar?.Year}</p>
                         </div>
 
-                        <p className="fs-5"><i class="fab fa-gratipay text-danger"></i> Add to favourites</p>
+                        <p className="fs-5"><i className="fab fa-gratipay text-danger"></i> Add to favourites</p>
 
                         <div className="px-3 px-md-5 py-4" style={{ backgroundColor: "#e3eeff", borderRadius: "30px" }}>
                             <Table >

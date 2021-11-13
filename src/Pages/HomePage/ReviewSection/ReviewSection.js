@@ -1,10 +1,22 @@
 import React from 'react'
+import Loader from 'react-loader-spinner';
 import Slider from 'react-slick'
 import ReviewApi from '../../../hooks/ReviewApi';
 import ReviewCard from './ReviewCard';
 
 function ReviewSection() {
     const [reviews] = ReviewApi();
+    if (reviews.length === 0) {
+        return <div className="d-flex justify-content-center">
+            <Loader
+                type="Puff"
+                color="#00BFFF"
+                height={300}
+                width={300}
+
+            />
+        </div>
+    }
     var settings = {
         dots: true,
         infinite: true,

@@ -34,7 +34,6 @@ const NavigationBar = () => {
                                     borderRight: "3px solid #29b6f6",
                                     borderRadius: "50px",
                                     transition: "borderLeft 2s ease, bordeRight 2s ease",
-                                    fontWeight: "bold",
                                     paddingLeft: "5px",
                                     paddingRight: "5px",
 

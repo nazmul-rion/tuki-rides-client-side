@@ -1,4 +1,5 @@
 import React from 'react'
+import Loader from 'react-loader-spinner';
 import Slider from 'react-slick';
 import CarsListApi from '../../../hooks/CarsListApi';
 import ProductCard from './ProductCard';
@@ -6,6 +7,17 @@ import ProductCard from './ProductCard';
 const ProductCarousel = () => {
 
     const [cars] = CarsListApi();
+    if (cars.length === 0) {
+        return <div className="d-flex justify-content-center">
+            <Loader
+                type="Puff"
+                color="#00BFFF"
+                height={300}
+                width={300}
+
+            />
+        </div>
+    }
 
     var settings = {
         dots: true,

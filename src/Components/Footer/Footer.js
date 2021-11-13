@@ -29,7 +29,7 @@ const Footer = () => {
             <h1>Follow Us:</h1>
             <div className="mt-3 fw-bold fs-3 icon-color d-flex gap-4">
               <a
-                href="https://www.facebook.com/nayem.islam.16752"
+                href="https://www.facebook.com/nazmulrion1/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -43,7 +43,7 @@ const Footer = () => {
                 <i className="fab fa-twitter "></i>
               </a>
               <a
-                href="https://www.linkedin.com/in/md-nayem-hossain-937052193/"
+                href="https://www.linkedin.com/in/nazmul-rion/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

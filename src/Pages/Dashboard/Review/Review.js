@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const Review = () => {
     const { user } = useAuth();
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         swal("Are you sure you want to add a review?", {
             buttons: ["No", "Yes"],

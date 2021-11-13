@@ -1,9 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
 import Loader from 'react-loader-spinner';
-import swal from 'sweetalert';
 import CarsListApi from '../../../hooks/CarsListApi';
-import ProductCardRow from '../../ExploreAllProducts/ProductCardRow';
 import ManageProductCard from './ManageProductCard';
 
 const ManageProducts = () => {
