@@ -11,10 +11,13 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProducts from '../AddProducts/AddProducts';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import AdminRoute from '../../../routes/AdminRoute';
+
 
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
-  const { user, signOutUser } = useAuth();
+
+  const { user, signOutUser, admin } = useAuth();
   return (
     <div>
       <div className="container-fluid">
@@ -41,87 +44,100 @@ const Dashboard = () => {
 
                 {/* User */}
 
-                <li className="nav-item">
-                  <NavLink
-                    activeStyle={{
-                      fontWeight: "bold",
 
-                      color: "rgb(0, 162, 255)"
-                    }}
-                    style={{ color: 'white' }} to={`${url}/pay`} className="nav-link align-middle ">
-                    <i className="fas fa-money-bill-wave"></i>
-
-                    <span className="ms-1 d-none d-sm-inline">Pay</span>
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "rgb(0, 162, 255)"
-                    }}
-                    style={{ color: 'white' }} to={`${url}/myOrder`} className="nav-link align-middle ">
-                    <i className="fas fa-shopping-cart"></i>
-                    <span className="ms-1 d-none d-sm-inline">My Order</span>
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "rgb(0, 162, 255)"
-                    }}
-                    style={{ color: 'white' }} to={`${url}/review`} className="nav-link align-middle ">
-                    <i className="fas fa-clipboard-list"></i>
-                    <span className="ms-1 d-none d-sm-inline">Review</span>
-                  </NavLink>
-                </li>
 
                 {/* Admin */}
-                <li className="nav-item">
-                  <NavLink
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "rgb(0, 162, 255)"
-                    }}
-                    style={{ color: 'white' }} to={`${url}/manageAllOrders`} className="nav-link align-middle">
-                    <i className="fas fa-user-edit"></i>
-                    <span className="ms-1 d-none d-sm-inline">Manage All Orders</span>
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "rgb(0, 162, 255)"
-                    }}
-                    style={{ color: 'white' }} to={`${url}/addProducts`} className="nav-link align-middle ">
-                    <i className="fas fa-plus-circle"></i>
-                    <span className="ms-1 d-none d-sm-inline">Add Products</span>
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "rgb(0, 162, 255)"
-                    }}
-                    style={{ color: 'white' }} to={`${url}/makeAdmin`} className="nav-link align-middle ">
-                    <i className="fas fa-user-shield"></i>
-                    <span className="ms-1 d-none d-sm-inline">Make Admin</span>
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "rgb(0, 162, 255)"
-                    }}
-                    style={{ color: 'white' }} to={`${url}/manageProducts`} className="nav-link align-middle ">
-                    <i className="far fa-caret-square-right"></i>
-                    <span className="ms-1 d-none d-sm-inline">Manage Products</span>
-                  </NavLink>
-                </li>
+
+                {
+                  admin ? <>
+
+                    <li className="nav-item">
+                      <NavLink
+                        activeStyle={{
+                          fontWeight: "bold",
+                          color: "rgb(0, 162, 255)"
+                        }}
+                        style={{ color: 'white' }} to={`${url}/manageAllOrders`} className="nav-link align-middle">
+                        <i className="fas fa-user-edit"></i>
+                        <span className="ms-1 d-none d-sm-inline">Manage All Orders</span>
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink
+                        activeStyle={{
+                          fontWeight: "bold",
+                          color: "rgb(0, 162, 255)"
+                        }}
+                        style={{ color: 'white' }} to={`${url}/addProducts`} className="nav-link align-middle ">
+                        <i className="fas fa-plus-circle"></i>
+                        <span className="ms-1 d-none d-sm-inline">Add Products</span>
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink
+                        activeStyle={{
+                          fontWeight: "bold",
+                          color: "rgb(0, 162, 255)"
+                        }}
+                        style={{ color: 'white' }} to={`${url}/makeAdmin`} className="nav-link align-middle ">
+                        <i className="fas fa-user-shield"></i>
+                        <span className="ms-1 d-none d-sm-inline">Make Admin</span>
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink
+                        activeStyle={{
+                          fontWeight: "bold",
+                          color: "rgb(0, 162, 255)"
+                        }}
+                        style={{ color: 'white' }} to={`${url}/manageProducts`} className="nav-link align-middle ">
+                        <i className="far fa-caret-square-right"></i>
+                        <span className="ms-1 d-none d-sm-inline">Manage Products</span>
+                      </NavLink>
+                    </li>
+
+
+
+                  </> :
+
+                    <>
+                      <li className="nav-item">
+                        <NavLink
+                          activeStyle={{
+                            fontWeight: "bold",
+
+                            color: "rgb(0, 162, 255)"
+                          }}
+                          style={{ color: 'white' }} to={`${url}/pay`} className="nav-link align-middle ">
+                          <i className="fas fa-money-bill-wave"></i>
+
+                          <span className="ms-1 d-none d-sm-inline">Pay</span>
+                        </NavLink>
+                      </li>
+                      <li className="nav-item">
+                        <NavLink
+                          activeStyle={{
+                            fontWeight: "bold",
+                            color: "rgb(0, 162, 255)"
+                          }}
+                          style={{ color: 'white' }} to={`${url}/myOrder`} className="nav-link align-middle ">
+                          <i className="fas fa-shopping-cart"></i>
+                          <span className="ms-1 d-none d-sm-inline">My Order</span>
+                        </NavLink>
+                      </li>
+                      <li className="nav-item">
+                        <NavLink
+                          activeStyle={{
+                            fontWeight: "bold",
+                            color: "rgb(0, 162, 255)"
+                          }}
+                          style={{ color: 'white' }} to={`${url}/review`} className="nav-link align-middle ">
+                          <i className="fas fa-clipboard-list"></i>
+                          <span className="ms-1 d-none d-sm-inline">Review</span>
+                        </NavLink>
+                      </li>
+                    </>
+                }
 
               </ul>
 
@@ -148,18 +164,18 @@ const Dashboard = () => {
               <Route path={`${path}/review`}>
                 <Review></Review>
               </Route>
-              <Route path={`${path}/manageAllOrders`}>
+              <AdminRoute path={`${path}/manageAllOrders`}>
                 <ManageAllOrders></ManageAllOrders>
-              </Route>
-              <Route path={`${path}/addProducts`}>
+              </AdminRoute>
+              <AdminRoute path={`${path}/addProducts`}>
                 <AddProducts></AddProducts>
-              </Route>
-              <Route path={`${path}/makeAdmin`}>
+              </AdminRoute>
+              <AdminRoute path={`${path}/makeAdmin`}>
                 <MakeAdmin></MakeAdmin>
-              </Route>
-              <Route path={`${path}/manageProducts`}>
+              </AdminRoute>
+              <AdminRoute path={`${path}/manageProducts`}>
                 <ManageProducts></ManageProducts>
-              </Route>
+              </AdminRoute>
             </Switch>
           </div>
         </div>

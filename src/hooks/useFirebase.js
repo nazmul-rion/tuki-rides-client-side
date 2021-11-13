@@ -9,6 +9,7 @@ import swal from 'sweetalert';
 initializeAuthentication()
 
 const useFirebase = () => {
+    const [admin, setAdmin] = useState(false);
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
@@ -16,6 +17,16 @@ const useFirebase = () => {
     const history = useHistory();
     const location = useLocation();
     const redirectUrl = location.state?.from || '/';
+
+
+
+    useEffect(() => {
+        fetch(`https://tuki-rides-nazmul-rion.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
+
+
     //on State Change 
     useEffect(() => {
         onAuthStateChanged(auth, user => {
@@ -35,12 +46,15 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((res) => {
                 setLoading(true);
-                setUser(res.user)
+                setUser(res.user);
+                saveUser(email, name, image, "POST");
                 updateProfile(auth.currentUser, {
                     displayName: name,
                     photoURL: image
                 }).then(() => {
+
                     swal("Sign Up!", "Sign Up Successfull", "success");
+
                     history.push(redirectUrl);
                 })
 
@@ -67,6 +81,7 @@ const useFirebase = () => {
             .then(res => {
                 setLoading(true);
                 setUser(res.user);
+                saveUser(res.user.email, res.user.displayName, res.user.photoURL, "POST");
                 swal("Sign in!", "Sign in Successfull", "success");
                 history.push(redirectUrl);
             }).finally(() => setLoading(false)).catch(err => setError(err.message))
@@ -83,8 +98,21 @@ const useFirebase = () => {
         });
     }
 
+    const saveUser = (email, displayName, photoURL, method) => {
+        const user = { email, displayName, photoURL };
+        fetch('https://tuki-rides-nazmul-rion.herokuapp.com/adduser', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
+
     return {
         user,
+        admin,
         error,
         loading,
         signUpUser,

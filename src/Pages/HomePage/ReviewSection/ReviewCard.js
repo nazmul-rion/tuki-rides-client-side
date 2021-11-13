@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 import Rating from 'react-rating';
 
 function ReviewCard(props) {
-    const { userId, name, rating, text, userPhoto } = props.review;
+    const { name, rating, text, userPhoto } = props.review;
 
     return (
         <Card className="mx-2 my-3">

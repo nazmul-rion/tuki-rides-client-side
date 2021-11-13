@@ -12,7 +12,7 @@ const ExploreAllProducts = () => {
             <hr />
             <Container>
                 {
-                    cars.slice(0, 10).map(car => (
+                    cars.map(car => (
                         <ProductCardRow
                             cars={car}
                             key={car._id}>

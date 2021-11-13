@@ -9,6 +9,7 @@ import Register from './Pages/Register/Register';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import ExploreAllProducts from './Pages/ExploreAllProducts/ExploreAllProducts';
 import ProductDetailsPage from './Pages/ProductDetailsPage/ProductDetailsPage';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -36,7 +37,6 @@ function App() {
             </Route>
             <Route path="/signup">
               <NavigationBar />
-              <NavigationBar />
               <Register />
             </Route>
             <PrivateRoute path="/dashboard">
@@ -47,6 +47,7 @@ function App() {
               <ProductDetailsPage></ProductDetailsPage>
             </PrivateRoute>
           </Switch>
+          <Footer></Footer>
         </AuthProvider>
       </BrowserRouter >
     </div >
