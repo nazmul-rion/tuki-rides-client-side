@@ -81,7 +81,7 @@ const useFirebase = () => {
             .then(res => {
                 setLoading(true);
                 setUser(res.user);
-                saveUser(res.user.email, res.user.displayName, res.user.photoURL, "POST");
+                saveUser(res.user.email, res.user.displayName, res.user.photoURL, "PUT");
                 swal("Sign in!", "Sign in Successfull", "success");
                 history.push(redirectUrl);
             }).finally(() => setLoading(false)).catch(err => setError(err.message))
