@@ -13,7 +13,7 @@ const ProductDetailsPage = () => {
     const [cars, setCars] = useState([]);
     const [singleCar, setSingleCar] = useState({});
     useEffect(() => {
-        fetch('https://tuki-rides-nazmul-rion.herokuapp.com/allcars')
+        fetch('https://tuki-rides-nazmul-rion.onrender.com/allcars')
             .then(res => res.json())
             .then(data => setCars(data));
     }, []);
@@ -29,7 +29,7 @@ const ProductDetailsPage = () => {
         })
             .then((value) => {
                 if (value) {
-                    axios.post('https://tuki-rides-nazmul-rion.herokuapp.com/addorder', data)
+                    axios.post('https://tuki-rides-nazmul-rion.onrender.com/addorder', data)
                         .then(res => {
                             if (res.data.insertedId) {
                                 swal({

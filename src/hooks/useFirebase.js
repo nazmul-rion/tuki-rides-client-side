@@ -21,7 +21,7 @@ const useFirebase = () => {
 
 
     useEffect(() => {
-        fetch(`https://tuki-rides-nazmul-rion.herokuapp.com/users/${user.email}`)
+        fetch(`https://tuki-rides-nazmul-rion.onrender.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -100,7 +100,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, photoURL, method) => {
         const user = { email, displayName, photoURL };
-        fetch('https://tuki-rides-nazmul-rion.herokuapp.com/adduser', {
+        fetch('https://tuki-rides-nazmul-rion.onrender.com/adduser', {
             method: method,
             headers: {
                 'content-type': 'application/json'

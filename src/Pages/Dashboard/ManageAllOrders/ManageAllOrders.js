@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
     const [ord, setord] = OrdersApi();
 
     const handleDeleteOrder = id => {
-        const url = `https://tuki-rides-nazmul-rion.herokuapp.com/allorders/${id}`;
+        const url = `https://tuki-rides-nazmul-rion.onrender.com/allorders/${id}`;
 
         swal("Are you sure you want Delete this Order?", {
             buttons: ["No", "Yes"],
@@ -34,7 +34,7 @@ const ManageAllOrders = () => {
     }
 
     const handleUpdateOrder = id => {
-        const url = `https://tuki-rides-nazmul-rion.herokuapp.com/allorders/${id}`;
+        const url = `https://tuki-rides-nazmul-rion.onrender.com/allorders/${id}`;
 
         swal("Are you sure you want Confirm this Order?", {
             buttons: ["No", "Yes"],

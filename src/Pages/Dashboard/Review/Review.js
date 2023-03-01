@@ -13,7 +13,7 @@ const Review = () => {
         })
             .then((value) => {
                 if (value) {
-                    axios.post('https://tuki-rides-nazmul-rion.herokuapp.com/addreview', data)
+                    axios.post('https://tuki-rides-nazmul-rion.onrender.com/addreview', data)
                         .then(res => {
                             if (res.data.insertedId) {
                                 swal({

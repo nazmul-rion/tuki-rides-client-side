@@ -11,7 +11,7 @@ const AddProducts = () => {
         })
             .then((value) => {
                 if (value) {
-                    axios.post('https://tuki-rides-nazmul-rion.herokuapp.com/addcars', data)
+                    axios.post('https://tuki-rides-nazmul-rion.onrender.com/addcars', data)
                         .then(res => {
                             if (res.data.insertedId) {
                                 swal({

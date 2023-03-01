@@ -7,7 +7,7 @@ function ManageProductCard(props) {
     const { _id, Name, Price, Color, Description, Transmission, Year, Make, Doors, Condition, img, FuelType, rating, raters } = props.cars;
     const [cars, setcars] = CarsListApi();
     const handleDeleteCar = id => {
-        const url = `https://tuki-rides-nazmul-rion.herokuapp.com/allcars/${id}`;
+        const url = `https://tuki-rides-nazmul-rion.onrender.com/allcars/${id}`;
 
         swal("Are you sure you want Delete this Car?", {
             buttons: ["No", "Yes"],

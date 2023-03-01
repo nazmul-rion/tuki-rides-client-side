@@ -10,7 +10,7 @@ const MyOrder = () => {
     const [ord, setord] = OrdersApi();
 
     const handleDeleteOrder = id => {
-        const url = `https://tuki-rides-nazmul-rion.herokuapp.com/allorders/${id}`;
+        const url = `https://tuki-rides-nazmul-rion.onrender.com/allorders/${id}`;
 
         swal("Are you sure you want Cancel this Order?", {
             buttons: ["No", "Yes"],
